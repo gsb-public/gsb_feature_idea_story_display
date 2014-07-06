@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature Idea Story Display feature.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function gsb_feature_idea_story_display_menu() {
+  $items = array();
+  $items['admin/config/gsb/insights'] = array(
+    'title' => 'Config Top Idea Stories',
+    'description' => 'Config Top Idea Stories',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('gsb_feature_idea_story_display_config_top_stories'),    
+    'access arguments' => array('administer top idea stories'),
+    'file' => 'gsb_feature_idea_story_display.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function gsb_feature_idea_story_display_permission() {
+  return array(
+    'administer top idea stories' => array(
+      'title' => t('Administer Top Idea Stories'),
+    ),
+  );
+}
