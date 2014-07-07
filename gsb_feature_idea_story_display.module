@@ -30,3 +30,74 @@ function gsb_feature_idea_story_display_permission() {
     ),
   );
 }
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function gsb_feature_idea_story_display_field_extra_fields() {
+  $extra = array();
+  $extra['node']['idea_story']['display']['gsb_feature_idea_story_display_top_stories_field'] = array(
+    'label' => t('Top Idea Stories'),
+    'description' => t('Top Idea Stories'),
+    'weight' => 0,
+  );
+  return $extra;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function gsb_feature_idea_story_display_node_view($node, $view_mode, $langcode) {
+  // If this field is not configured for this view mode, skip it.
+  $fields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  if (empty($fields['gsb_feature_idea_story_display_top_stories_field']['visible'])) {
+    return;
+  }  
+  if ($node->type == 'idea_story') {
+    $stuff = _gsb_feature_idea_story_display_markup_top_stories();
+    $node->content['gsb_feature_idea_story_display_top_stories_field'] = array(
+      '#markup' => 
+        '<div class="">' .
+        'stuff = ' . $stuff . 
+        '</div>',
+    );    
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function gsb_feature_idea_story_display_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools') {
+    return "plugins/$plugin_type";
+  }
+}
+
+/**
+ * _gsb_feature_idea_story_display_markup_top_stories()
+ *
+ * returns the markup for the top 3 idea stories created in the 
+ * admin config page. 
+ *   (see gsb_feature_idea_story_display.admin.inc - gsb_feature_idea_story_display_config_top_stories)
+ */
+function _gsb_feature_idea_story_display_markup_top_stories() {
+  
+  $stuff = array();
+
+  $top_story_one = variable_get('gsb_feature_idea_story_display_top_story_one', '');
+  $top_story_two = variable_get('gsb_feature_idea_story_display_top_story_two', '');
+  $top_story_three = variable_get('gsb_feature_idea_story_display_top_story_three', '');
+  
+  $node = node_load($top_story_one);
+  $stuff[] = $node->nid;
+
+  $node = node_load($top_story_two);
+  $stuff[] = $node->nid;
+
+  $node = node_load($top_story_three);
+  $stuff[] = $node->nid;    
+
+  return implode(",", $stuff);
+}
+
+
