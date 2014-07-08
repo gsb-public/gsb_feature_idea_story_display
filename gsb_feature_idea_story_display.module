@@ -54,22 +54,10 @@ function gsb_feature_idea_story_display_node_view($node, $view_mode, $langcode) 
     return;
   }  
   if ($node->type == 'idea_story') {
-    $stuff = _gsb_feature_idea_story_display_markup_top_stories();
+    $top_stories = _gsb_feature_idea_story_display_markup_top_stories();
     $node->content['gsb_feature_idea_story_display_top_stories_field'] = array(
-      '#markup' => 
-        '<div class="">' .
-        'stuff = ' . $stuff . 
-        '</div>',
+      '#markup' => '<div class="">' . $top_stories . '</div>',
     );    
-  }
-}
-
-/**
- * Implements hook_ctools_plugin_directory().
- */
-function gsb_feature_idea_story_display_ctools_plugin_directory($owner, $plugin_type) {
-  if ($owner == 'ctools') {
-    return "plugins/$plugin_type";
   }
 }
 
@@ -81,23 +69,25 @@ function gsb_feature_idea_story_display_ctools_plugin_directory($owner, $plugin_
  *   (see gsb_feature_idea_story_display.admin.inc - gsb_feature_idea_story_display_config_top_stories)
  */
 function _gsb_feature_idea_story_display_markup_top_stories() {
-  
-  $stuff = array();
-
-  $top_story_one = variable_get('gsb_feature_idea_story_display_top_story_one', '');
-  $top_story_two = variable_get('gsb_feature_idea_story_display_top_story_two', '');
-  $top_story_three = variable_get('gsb_feature_idea_story_display_top_story_three', '');
-  
-  $node = node_load($top_story_one);
-  $stuff[] = $node->nid;
-
-  $node = node_load($top_story_two);
-  $stuff[] = $node->nid;
-
-  $node = node_load($top_story_three);
-  $stuff[] = $node->nid;    
-
-  return implode(",", $stuff);
+  $html = '';
+  $top_stories = variable_get('gsb_feature_idea_story_display_top_stories', array());
+  foreach( $top_stories as $value ) {
+    $node = node_load($value);
+    $view = node_view($node, 'teaser');
+    $html .= drupal_render($view);     
+  }
+  return $html;
 }
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function gsb_feature_idea_story_display_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools') {
+    return "plugins/$plugin_type";
+  }
+}
+
+
 
 

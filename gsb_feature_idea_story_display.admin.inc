@@ -5,7 +5,7 @@
  */
 function gsb_feature_idea_story_display_config_top_stories() {
 
-  $top_story_one = variable_get('gsb_feature_idea_story_display_top_story_one', '');
+  $top_stories = variable_get('gsb_feature_idea_story_display_top_stories', array());
 
   $form['top_story_one'] = array(
     '#type' => 'entityreference',
@@ -13,7 +13,7 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
-    '#default_value' => $top_story_one,
+    '#default_value' => empty($top_stories) ? '' : $top_stories[0],
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),    
   );
 
@@ -25,7 +25,7 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
-    '#default_value' => $top_story_two,
+    '#default_value' => empty($top_stories) ? '' : $top_stories[1],
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),
   );
 
@@ -37,7 +37,7 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
-    '#default_value' => $top_story_three,
+    '#default_value' => empty($top_stories) ? '' : $top_stories[2],
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),
   );
 
@@ -57,14 +57,13 @@ function gsb_feature_idea_story_display_config_top_stories() {
  */
 function gsb_feature_idea_story_display_config_top_stories_submit(&$form, &$form_state) {
 
-  $top_story_one = $form_state['values']['top_story_one']['entity_id'];
-  variable_set('gsb_feature_idea_story_display_top_story_one', $top_story_one);
+  $top_stories = array();
 
-  $top_story_two = $form_state['values']['top_story_two']['entity_id'];
-  variable_set('gsb_feature_idea_story_display_top_story_two', $top_story_two);
-
-  $top_story_three = $form_state['values']['top_story_three']['entity_id'];
-  variable_set('gsb_feature_idea_story_display_top_story_three', $top_story_three);
+  $top_stories[0] = $form_state['values']['top_story_one']['entity_id'];
+  $top_stories[1] = $form_state['values']['top_story_two']['entity_id'];
+  $top_stories[2] = $form_state['values']['top_story_three']['entity_id'];
+  
+  variable_set('gsb_feature_idea_story_display_top_stories', $top_stories);
 
   drupal_set_message(t('Your configuration of top stories has been successfully saved.'), 'status', FALSE);
   
