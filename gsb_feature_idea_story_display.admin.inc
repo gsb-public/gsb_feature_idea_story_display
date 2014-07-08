@@ -17,8 +17,6 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),    
   );
 
-  $top_story_two = variable_get('gsb_feature_idea_story_display_top_story_two', '');
-
   $form['top_story_two'] = array(
     '#type' => 'entityreference',
     '#title' => 'Top Story 2',
@@ -28,8 +26,6 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#default_value' => empty($top_stories) ? '' : $top_stories[1],
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),
   );
-
-  $top_story_three = variable_get('gsb_feature_idea_story_display_top_story_three', '');
 
   $form['top_story_three'] = array(
     '#type' => 'entityreference',
