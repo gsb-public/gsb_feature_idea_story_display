@@ -72,9 +72,11 @@ function _gsb_feature_idea_story_display_markup_top_stories() {
   $html = '';
   $top_stories = variable_get('gsb_feature_idea_story_display_top_stories', array());
   foreach( $top_stories as $value ) {
-    $node = node_load($value);
-    $view = node_view($node, 'teaser');
-    $html .= drupal_render($view);     
+    if ($value) {
+      $node = node_load($value);
+      $view = node_view($node, 'teaser');
+      $html .= drupal_render($view);
+    }
   }
   return $html;
 }
