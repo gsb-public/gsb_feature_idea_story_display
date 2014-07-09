@@ -13,7 +13,7 @@ function gsb_feature_idea_story_display_menu() {
     'title' => 'Insights',
     'description' => 'Config Top Idea Stories',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('gsb_feature_idea_story_display_config_top_stories'),    
+    'page arguments' => array('gsb_feature_idea_story_display_config_top_stories'),
     'access arguments' => array('administer top idea stories'),
     'file' => 'gsb_feature_idea_story_display.admin.inc',
   );
@@ -52,20 +52,20 @@ function gsb_feature_idea_story_display_node_view($node, $view_mode, $langcode) 
   $fields = field_extra_fields_get_display('node', $node->type, $view_mode);
   if (empty($fields['gsb_feature_idea_story_display_top_stories_field']['visible'])) {
     return;
-  }  
+  }
   if ($node->type == 'idea_story') {
     $top_stories = _gsb_feature_idea_story_display_markup_top_stories();
     $node->content['gsb_feature_idea_story_display_top_stories_field'] = array(
       '#markup' => '<div class="">' . $top_stories . '</div>',
-    );    
+    );
   }
 }
 
 /**
  * _gsb_feature_idea_story_display_markup_top_stories()
  *
- * returns the markup for the top 3 idea stories created in the 
- * admin config page. 
+ * returns the markup for the top 3 idea stories created in the
+ * admin config page.
  *   (see gsb_feature_idea_story_display.admin.inc - gsb_feature_idea_story_display_config_top_stories)
  */
 function _gsb_feature_idea_story_display_markup_top_stories() {
@@ -89,7 +89,3 @@ function gsb_feature_idea_story_display_ctools_plugin_directory($owner, $plugin_
     return "plugins/$plugin_type";
   }
 }
-
-
-
-
