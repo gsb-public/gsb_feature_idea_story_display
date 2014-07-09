@@ -16,7 +16,7 @@ function gsb_feature_idea_story_display_top_idea_story_content_type_render
     return (object) array(
       'title' => 'Top Stories',
       'content' => array(
-      '#markup' => '<div class="">' . $top_stories . '</div>',
+      '#markup' => '<div class="top-stories-wrapper">' . $top_stories . '</div>',
     ),
   );
 }
