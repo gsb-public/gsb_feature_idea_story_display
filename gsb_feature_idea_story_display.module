@@ -10,7 +10,7 @@
 function gsb_feature_idea_story_display_menu() {
   $items = array();
   $items['admin/config/gsb/insights'] = array(
-    'title' => 'Config Top Idea Stories',
+    'title' => 'Insights',
     'description' => 'Config Top Idea Stories',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('gsb_feature_idea_story_display_config_top_stories'),    

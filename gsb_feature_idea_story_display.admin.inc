@@ -7,9 +7,17 @@ function gsb_feature_idea_story_display_config_top_stories() {
 
   $top_stories = variable_get('gsb_feature_idea_story_display_top_stories', array());
 
-  $form['top_story_one'] = array(
+  $form['fieldset_top_stories'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Top Stories'),
+    '#collapsible' => FALSE,
+    '#collapsed' => TRUE,
+    '#description' => '<p>' . t('') . '</p>'
+  );
+  
+  $form['fieldset_top_stories']['top_story_one'] = array(
     '#type' => 'entityreference',
-    '#title' => 'Top Story 1',
+    '#title' => 'Story 1',
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
@@ -17,9 +25,9 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),    
   );
 
-  $form['top_story_two'] = array(
+  $form['fieldset_top_stories']['top_story_two'] = array(
     '#type' => 'entityreference',
-    '#title' => 'Top Story 2',
+    '#title' => 'Story 2',
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
@@ -27,9 +35,9 @@ function gsb_feature_idea_story_display_config_top_stories() {
     '#process' => array('ajax_process_form', 'entityreference_autocomplete_process_entityreference'),
   );
 
-  $form['top_story_three'] = array(
+  $form['fieldset_top_stories']['top_story_three'] = array(
     '#type' => 'entityreference',
-    '#title' => 'Top Story 3',
+    '#title' => 'Story 3',
     '#era_entity_type' => 'node',
     '#era_bundles' => array('idea_story'),
     '#era_cardinality' => 1,
