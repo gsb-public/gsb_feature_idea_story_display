@@ -56,7 +56,7 @@ function gsb_feature_idea_story_display_node_view($node, $view_mode, $langcode) 
   if ($node->type == 'idea_story') {
     $top_stories = _gsb_feature_idea_story_display_markup_top_stories();
     $node->content['gsb_feature_idea_story_display_top_stories_field'] = array(
-      '#markup' => '<div class="top-stories-wrapper">' . $top_stories . '</div>',
+      '#markup' => '<fieldset class="field-group-fieldset collapsible form-wrapper top-stories-fieldset"><legend><span class="fieldset-legend">' . t('Top Stories') . '</span></legend><div class="fieldset-wrapper">' . $top_stories . '</div></fieldset>',
     );
   }
 }
@@ -78,7 +78,7 @@ function _gsb_feature_idea_story_display_markup_top_stories() {
       $html .= drupal_render($view);
     }
   }
-  return $html;
+  return '<div class="top-stories-wrapper"><div class="superhead">' . t('Top Stories') . '</div>' . $html . '</div>';
 }
 
 /**
