@@ -75,8 +75,10 @@ function _gsb_feature_idea_story_display_markup_top_stories() {
   foreach( $top_stories as $value ) {
     if ($value) {
       $node = node_load($value);
-      $view = node_view($node, 'idea_story_top_stories');
-      $html .= drupal_render($view);
+      if ($node) {
+        $view = node_view($node, 'idea_story_top_stories');
+        $html .= drupal_render($view);
+      }
     }
   }
   return '<div class="top-stories-wrapper"><div class="superhead">' . t('Top Stories') . '</div>' . $html . '</div>';
