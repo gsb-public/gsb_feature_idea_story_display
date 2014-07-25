@@ -75,7 +75,7 @@ function _gsb_feature_idea_story_display_markup_top_stories() {
   foreach( $top_stories as $value ) {
     if ($value) {
       $node = node_load($value);
-      if ($node) {
+      if ($node && node_access('view', $node)) {
         $view = node_view($node, 'idea_story_top_stories');
         $html .= drupal_render($view);
       }
