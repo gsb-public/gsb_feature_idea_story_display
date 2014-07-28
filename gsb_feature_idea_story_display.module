@@ -4,6 +4,12 @@
  * Code for the GSB Feature Idea Story Display feature.
  */
 
+include_once 'gsb_feature_idea_story_display.features.inc';
+/**
+ * @file
+ * Code for the GSB Feature Idea Story Display feature.
+ */
+
 /**
  * Implements hook_menu().
  */
