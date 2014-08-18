@@ -176,7 +176,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Field: Content: Publication Date */
+  /* Field: Content: Source Publication Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -249,7 +249,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   );
   $handler->display->display_options['fields']['field_key_taxonomy']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_key_taxonomy']['separator'] = ',';
-  /* Sort criterion: Content: Publication Date (field_date) */
+  /* Sort criterion: Content: Source Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -270,9 +270,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'announcement' => 'announcement',
     'idea_story' => 'idea_story',
-    'school_story' => 'school_story',
   );
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
