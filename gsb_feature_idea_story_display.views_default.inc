@@ -29,8 +29,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_plugin'] = 'table';
   /* Relationship: Related Field Collection: field_related_faculty */
   $handler->display->display_options['relationships']['field_related_faculty_value']['id'] = 'field_related_faculty_value';
   $handler->display->display_options['relationships']['field_related_faculty_value']['table'] = 'field_data_field_related_faculty';
@@ -146,6 +145,136 @@ function gsb_feature_idea_story_display_views_default_views() {
     0 => 'faculty',
   );
   $handler->display->display_options['show_title'] = 1;
+
+  /* Display: EVA Field Form */
+  $handler = $view->new_display('entity_view', 'EVA Field Form', 'eva_field_form');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'EVA Field Form';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_date' => 'field_date',
+    'field_icon' => 'field_icon',
+    'title' => 'title',
+    'field_editorial_summary' => 'field_editorial_summary',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_date' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_icon' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_editorial_summary' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: GSB: Modal node add link */
+  $handler->display->display_options['header']['gsb_node_modal_add_link']['id'] = 'gsb_node_modal_add_link';
+  $handler->display->display_options['header']['gsb_node_modal_add_link']['table'] = 'gsb__global';
+  $handler->display->display_options['header']['gsb_node_modal_add_link']['field'] = 'gsb_node_modal_add_link';
+  $handler->display->display_options['header']['gsb_node_modal_add_link']['bundle'] = 'idea_story';
+  $handler->display->display_options['header']['gsb_node_modal_add_link']['text'] = 'Create a new idea story';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_icon][title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Source Publication Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'panopoly_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Field: Display on Profile */
+  $handler->display->display_options['fields']['field_profile_visibility']['id'] = 'field_profile_visibility';
+  $handler->display->display_options['fields']['field_profile_visibility']['table'] = 'field_data_field_profile_visibility';
+  $handler->display->display_options['fields']['field_profile_visibility']['field'] = 'field_profile_visibility';
+  $handler->display->display_options['fields']['field_profile_visibility']['relationship'] = 'field_related_faculty_value';
+  $handler->display->display_options['fields']['field_profile_visibility']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_profile_visibility']['use_form_element'] = TRUE;
+  /* Field: Content: Edit link (in modal) */
+  $handler->display->display_options['fields']['edit_node_modal']['id'] = 'edit_node_modal';
+  $handler->display->display_options['fields']['edit_node_modal']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node_modal']['field'] = 'edit_node_modal';
+  $handler->display->display_options['fields']['edit_node_modal']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_modal']['element_label_colon'] = FALSE;
+  /* Field: Content: Delete link (in modal) */
+  $handler->display->display_options['fields']['delete_node_modal']['id'] = 'delete_node_modal';
+  $handler->display->display_options['fields']['delete_node_modal']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node_modal']['field'] = 'delete_node_modal';
+  $handler->display->display_options['fields']['delete_node_modal']['label'] = '';
+  $handler->display->display_options['fields']['delete_node_modal']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Month (field_month) */
+  $handler->display->display_options['sorts']['field_month_value']['id'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['table'] = 'field_data_field_month';
+  $handler->display->display_options['sorts']['field_month_value']['field'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Day (field_pub_date_day) */
+  $handler->display->display_options['sorts']['field_pub_date_day_value']['id'] = 'field_pub_date_day_value';
+  $handler->display->display_options['sorts']['field_pub_date_day_value']['table'] = 'field_data_field_pub_date_day';
+  $handler->display->display_options['sorts']['field_pub_date_day_value']['field'] = 'field_pub_date_day_value';
+  $handler->display->display_options['sorts']['field_pub_date_day_value']['order'] = 'DESC';
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'faculty',
+  );
+  $handler->display->display_options['show_on'] = 'form';
   $export['gsb_insights_stanford_business'] = $view;
 
   $view = new view();
