@@ -349,15 +349,6 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
-  /* Contextual filter: Content: Search field (field_search_field) */
-  $handler->display->display_options['arguments']['field_search_field_value']['id'] = 'field_search_field_value';
-  $handler->display->display_options['arguments']['field_search_field_value']['table'] = 'field_data_field_search_field';
-  $handler->display->display_options['arguments']['field_search_field_value']['field'] = 'field_search_field_value';
-  $handler->display->display_options['arguments']['field_search_field_value']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_search_field_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_search_field_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_search_field_value']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_search_field_value']['limit'] = '0';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -408,7 +399,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator'] = 'field_search_field_value_op';
-  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'search_keys';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'term';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
