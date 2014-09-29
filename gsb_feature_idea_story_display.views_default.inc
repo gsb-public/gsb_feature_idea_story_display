@@ -331,18 +331,6 @@ function gsb_feature_idea_story_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_profile_visibility']['use_form_element'] = TRUE;
-  /* Field: Content: Edit link (in modal) */
-  $handler->display->display_options['fields']['edit_node_modal']['id'] = 'edit_node_modal';
-  $handler->display->display_options['fields']['edit_node_modal']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node_modal']['field'] = 'edit_node_modal';
-  $handler->display->display_options['fields']['edit_node_modal']['label'] = '';
-  $handler->display->display_options['fields']['edit_node_modal']['element_label_colon'] = FALSE;
-  /* Field: Content: Delete link (in modal) */
-  $handler->display->display_options['fields']['delete_node_modal']['id'] = 'delete_node_modal';
-  $handler->display->display_options['fields']['delete_node_modal']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['delete_node_modal']['field'] = 'delete_node_modal';
-  $handler->display->display_options['fields']['delete_node_modal']['label'] = '';
-  $handler->display->display_options['fields']['delete_node_modal']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Year (field_year_of_publication) */
   $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
