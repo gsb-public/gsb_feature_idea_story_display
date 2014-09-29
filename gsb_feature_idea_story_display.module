@@ -87,7 +87,7 @@ function _gsb_feature_idea_story_display_markup_top_stories() {
       }
     }
   }
-  return '<div class="top-stories-wrapper"><div class="superhead">' . t('Top Stories') . '</div>' . $html . '</div>';
+  return '<div class="top-stories-wrapper"><div class="superhead">' . t('Editor\'s Picks') . '</div>' . $html . '</div>';
 }
 
 /**
