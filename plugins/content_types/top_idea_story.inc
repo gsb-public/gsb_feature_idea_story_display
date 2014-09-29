@@ -1,7 +1,7 @@
 <?php
 
 $plugin = array(
-  'title' => t('Idea Story: Top Stories'),
+  'title' => t('Idea Story: Editor\'s Picks'),
   'category' => t('Content panes'),
   'single' => TRUE,
   'all contexts' => TRUE,
