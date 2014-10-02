@@ -63,7 +63,7 @@ function gsb_feature_idea_story_display_node_view_alter(&$build) {
   if ($build['#node']->type == 'idea_story') {
     $top_stories = _gsb_feature_idea_story_display_markup_top_stories();
     $build['gsb_feature_idea_story_display_top_stories_field'] = array(
-      '#markup' => '<fieldset class="field-group-fieldset collapsible collapsed form-wrapper top-stories-fieldset"><legend><span class="fieldset-legend">' . t('Top Stories') . '</span></legend><div class="fieldset-wrapper">' . $top_stories . '</div></fieldset>',
+      '#markup' => '<fieldset class="field-group-fieldset collapsible collapsed form-wrapper top-stories-fieldset"><legend><span class="fieldset-legend">' . t('Editor\'s Picks') . '</span></legend><div class="fieldset-wrapper">' . $top_stories . '</div></fieldset>',
     );
   }
 }
