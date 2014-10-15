@@ -74,6 +74,25 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler = $view->new_display('block', 'Homepage', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<a href="/insights"><strong>Latest Insights</strong> by Stanford Business</a>';
+
+  /* Display: RSS Feed */
+  $handler = $view->new_display('feed', 'RSS Feed', 'rss_feed');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'title';
+  $handler->display->display_options['row_options']['description_field'] = 'title';
+  $handler->display->display_options['row_options']['creator_field'] = 'title';
+  $handler->display->display_options['row_options']['date_field'] = 'title';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'title',
+    'guid_field_is_permalink' => 0,
+  );
+  $handler->display->display_options['path'] = 'idea-story/feed';
+  $handler->display->display_options['sitename_title'] = 0;
   $export['gsb_idea_story_listing'] = $view;
 
   $view = new view();
