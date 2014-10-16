@@ -81,16 +81,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'rss_fields';
-  $handler->display->display_options['row_options']['title_field'] = 'title';
-  $handler->display->display_options['row_options']['link_field'] = 'title';
-  $handler->display->display_options['row_options']['description_field'] = 'title';
-  $handler->display->display_options['row_options']['creator_field'] = 'title';
-  $handler->display->display_options['row_options']['date_field'] = 'title';
-  $handler->display->display_options['row_options']['guid_field_options'] = array(
-    'guid_field' => 'title',
-    'guid_field_is_permalink' => 0,
-  );
+  $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
