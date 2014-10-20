@@ -78,10 +78,23 @@ function gsb_feature_idea_story_display_views_default_views() {
   /* Display: RSS Feed */
   $handler = $view->new_display('feed', 'RSS Feed', 'rss_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['title'] = 'Insights by Stanford Business';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'rss_feed';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'path';
+  $handler->display->display_options['row_options']['description_field'] = 'field_body';
+  $handler->display->display_options['row_options']['creator_field'] = 'nothing';
+  $handler->display->display_options['row_options']['date_field'] = 'field_date';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'path',
+    'guid_field_is_permalink' => 0,
+  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -93,6 +106,66 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Stanford Graduate School of Business */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Stanford Graduate School of Business';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Stanford Graduate School of Business';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Content: Source Publication Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = '';
+  $handler->display->display_options['fields']['field_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'pubdate',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Field: Description */
+  $handler->display->display_options['fields']['field_body']['id'] = 'field_body';
+  $handler->display->display_options['fields']['field_body']['table'] = 'field_data_field_body';
+  $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
+  $handler->display->display_options['fields']['field_body']['label'] = '';
+  $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_body']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Source Publication Date (field_date) */
+  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'idea-story/feed';
   $handler->display->display_options['sitename_title'] = 0;
   $export['gsb_idea_story_listing'] = $view;
