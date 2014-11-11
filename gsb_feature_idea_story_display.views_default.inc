@@ -508,6 +508,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'idea_story' => 'idea_story',
+    'offsite_idea_story' => 'offsite_idea_story',
   );
   /* Filter criterion: Content: Search field (field_search_field) */
   $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
@@ -536,6 +537,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'idea_story' => 'idea_story',
+    'offsite_idea_story' => 'offsite_idea_story',
   );
   /* Filter criterion: Content: Search field (field_search_field) */
   $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
