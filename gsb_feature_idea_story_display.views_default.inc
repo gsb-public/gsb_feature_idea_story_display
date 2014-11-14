@@ -916,7 +916,8 @@ function gsb_feature_idea_story_display_views_default_views() {
 
   /* Display: Content Pane */
   $handler = $view->new_display('panel_pane', 'Content Pane', 'panel_pane_1');
-  $handler->display->display_options['pane_category']['name'] = 'Content Panes';
+  $handler->display->display_options['pane_title'] = 'Idea Stories';
+  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
