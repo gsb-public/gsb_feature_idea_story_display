@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'title' => t('Idea Story: Editor\'s Picks'),
-  'category' => t('Content panes'),
+  'title' => t('Insights: Idea Stories | Editor\'s Picks'),
+  'category' => t('Custom Content & Features'),
   'single' => TRUE,
   'all contexts' => TRUE,
 );
