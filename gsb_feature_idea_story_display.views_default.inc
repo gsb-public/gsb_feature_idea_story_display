@@ -817,6 +817,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['vocabulary'] = 'academic_area';
+  $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Region of Interest (field_region_of_interest) */
   $handler->display->display_options['filters']['field_region_of_interest_tid']['id'] = 'field_region_of_interest_tid';
   $handler->display->display_options['filters']['field_region_of_interest_tid']['table'] = 'field_data_field_region_of_interest';
@@ -866,6 +867,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['field_region_of_interest_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_region_of_interest_tid']['vocabulary'] = 'region_interest';
   $handler->display->display_options['filters']['field_region_of_interest_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_region_of_interest_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Additional Topics (field_business_insight_topic) */
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
@@ -913,6 +915,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['error_message'] = FALSE;
 
   /* Display: Content Pane */
   $handler = $view->new_display('panel_pane', 'Content Pane', 'panel_pane_1');
