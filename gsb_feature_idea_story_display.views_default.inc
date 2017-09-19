@@ -724,7 +724,6 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'idea_story' => 'idea_story',
-    'offsite_idea_story' => 'offsite_idea_story',
   );
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
