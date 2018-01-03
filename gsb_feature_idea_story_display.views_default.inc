@@ -46,7 +46,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Source Publication Date (field_date) */
+  /* Sort criterion: Field: Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -121,7 +121,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Source Publication Date */
+  /* Field: Field: Publication Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -156,7 +156,7 @@ function gsb_feature_idea_story_display_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Source Publication Date (field_date) */
+  /* Sort criterion: Field: Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -206,7 +206,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['ui_name'] = 'Faculty Name';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['label'] = 'Faculty Name';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['required'] = TRUE;
-  /* Field: Content: Media Format */
+  /* Field: Field: Media Format */
   $handler->display->display_options['fields']['field_icon']['id'] = 'field_icon';
   $handler->display->display_options['fields']['field_icon']['table'] = 'field_data_field_icon';
   $handler->display->display_options['fields']['field_icon']['field'] = 'field_icon';
@@ -232,7 +232,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Source Publication Date */
+  /* Field: Field: Publication Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -264,7 +264,7 @@ function gsb_feature_idea_story_display_views_default_views() {
       ),
     ),
   );
-  /* Sort criterion: Content: Source Publication Date (field_date) */
+  /* Sort criterion: Field: Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -380,11 +380,10 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Source Publication Date */
+  /* Field: Field: Publication Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['label'] = 'Publication Date';
   $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'panopoly_day',
@@ -490,7 +489,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Source Publication Date (field_date) */
+  /* Sort criterion: Field: Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -629,7 +628,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_date|field_date_value';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'idea_story_latest_stories';
-  /* Field: Content: Source Publication Date */
+  /* Field: Field: Publication Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -648,7 +647,7 @@ function gsb_feature_idea_story_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Media Format */
+  /* Field: Field: Media Format */
   $handler->display->display_options['fields']['field_icon']['id'] = 'field_icon';
   $handler->display->display_options['fields']['field_icon']['table'] = 'field_data_field_icon';
   $handler->display->display_options['fields']['field_icon']['field'] = 'field_icon';
@@ -702,7 +701,7 @@ function gsb_feature_idea_story_display_views_default_views() {
   );
   $handler->display->display_options['fields']['field_key_taxonomy']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_key_taxonomy']['separator'] = ',';
-  /* Sort criterion: Content: Source Publication Date (field_date) */
+  /* Sort criterion: Field: Publication Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -817,51 +816,6 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['vocabulary'] = 'academic_area';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Region of Interest (field_region_of_interest) */
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['id'] = 'field_region_of_interest_tid';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['table'] = 'field_data_field_region_of_interest';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['field'] = 'field_region_of_interest_tid';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['expose']['operator_id'] = 'field_region_of_interest_tid_op';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['expose']['label'] = 'Region of Interest';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['expose']['operator'] = 'field_region_of_interest_tid_op';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['expose']['identifier'] = 'field_region_of_interest_tid';
-  $handler->display->display_options['filters']['field_region_of_interest_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    151 => 0,
-    16 => 0,
-    21 => 0,
-    71 => 0,
-    61 => 0,
-    171 => 0,
-    56 => 0,
-    66 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    91 => 0,
-    146 => 0,
-    136 => 0,
-    26 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    96 => 0,
-    101 => 0,
-    106 => 0,
-    116 => 0,
-    121 => 0,
-    126 => 0,
-    131 => 0,
-    141 => 0,
-    156 => 0,
-    161 => 0,
-    166 => 0,
-    176 => 0,
-  );
   /* Filter criterion: Content: Additional Topics (field_business_insight_topic) */
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
@@ -924,7 +878,6 @@ function gsb_feature_idea_story_display_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['exposed_form_overrides'] = array(
     'field_academic_area_unlimited_tid' => '',
