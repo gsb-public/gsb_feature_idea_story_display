@@ -432,6 +432,31 @@ function gsb_feature_idea_story_display_views_default_views() {
     0 => 'faculty',
   );
   $handler->display->display_options['show_on'] = 'form';
+
+  /* Display: Homepage Insights */
+  $handler = $view->new_display('panel_pane', 'Homepage Insights', 'panel_pane_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'homepage_school_news';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_date|field_date_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'homepage_school_news';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'Insights: Homepage Three Across';
+  $handler->display->display_options['pane_category']['name'] = 'Homepage Elements';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['gsb_insights_stanford_business'] = $view;
 
   $view = new view();
